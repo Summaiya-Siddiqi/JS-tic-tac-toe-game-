@@ -1,0 +1,188 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #545454;
+  font-family: sans-serif;
+  background: linear-gradient(-45deg, #90dae4,#963ad3,#957eeb, #23a6d5 );
+	background-size: 400% 400%;
+	animation: gradient 5s ease infinite;
+  
+}
+@keyframes gradient {
+	0% {
+		background-position: 10% 50%;
+	}
+	50% {
+		background-position: 90% 50%;
+	}
+	100% {
+		background-position: 10% 50%;
+	}
+}
+
+.container {
+  background:  #bfade0;
+  margin: 30px;
+  padding: 30px;
+  border-radius: 25px;
+  box-shadow: -1px 3px 8px 7px #5b3073;
+  -webkit-box-shadow: -1px 3px 8px 7px #533365;
+  -moz-box-shadow: -1px 3px 8px 7px #432056;
+
+}
+
+.title {
+  text-align: center;
+  font-weight: bold;
+}
+
+.title span {
+  color: #F2EBD3;
+}
+
+.status-action {
+  display: flex;
+  margin-top: 25px;
+  font-size: 25px;
+  justify-content: space-around;
+  height: 30px;
+  font-weight: bold;
+}
+
+.status span {
+  color: #F2EBD3;
+}
+
+.reset {
+  cursor: pointer;
+  text-decoration-line: underline;
+  font-weight: bold;
+}
+
+.reset:hover {
+  color: #F2EBD3;
+}
+
+.game-grid {
+  background: #a775c3;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 15px;
+  margin-top: 50px;
+}
+
+.game-cell {
+  background:  #bfade0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  height: 150px;
+  width: 150px;
+}
+
+.x,
+.o {
+  cursor: default;
+}
+
+.x::after {
+  content: '×';
+  font-size: 190px;
+}
+
+.o::after {
+  content: '○';
+  color: #F2EBD3;
+  font-size: 194px;
+  
+}
+
+.won::after {
+  color: #BD022F;
+}
+
+@media only screen and (max-width: 1024px) {
+  .game-grid {
+    margin-top: 25px;
+    grid-gap: 10px;
+  }
+
+  .game-cell {
+    height: 100px;
+    width: 100px;
+  }
+
+  .x::after {
+    font-size: 150px;
+  }
+
+  .o::after {
+    font-size: 175px;
+  }
+}
+
+@media only screen and (max-width: 520px) {
+  body{
+    margin-top: 10px;
+  }
+  .container {
+    margin: 25px;
+    padding: 25px;
+  }
+
+  .game-cell {
+    height: 100px;
+    width: 90px;
+  }
+
+  .x::after {
+    font-size: 100px;
+  }
+
+  .o::after {
+    font-size: 125px;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  body{
+    margin-top: 10px;
+  }
+  .container {
+    margin: 25px;
+    padding: 25px;
+  }
+  
+  .game-grid {
+    margin-top: 25px;
+    grid-gap: 10px;
+  }
+
+  
+  .game-cell {
+    height: 100px;
+    width: 80px;
+  }
+
+  .x::after {
+    font-size:50px;
+  }
+
+  .o::after {
+    font-size: 60px;
+  }
+}
+
+
+
+
